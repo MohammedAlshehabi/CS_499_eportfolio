@@ -3,24 +3,27 @@
 ## Live Site
 [View ePortfolio](https://mohammedalshehabi.github.io/CS_499_eportfolio/)
 
-## Description
-This ePortfolio showcases my growth in software engineering, algorithms and data structures, and database management through enhanced artifacts and professional reflections. Each artifact demonstrates skills, enhancements, and alignment with CS program course outcomes.
+## Repository Overview
+This ePortfolio demonstrates my growth in:
+- Software Engineering & Design
+- Algorithms & Data Structures
+- Database Management & Security
 
-## Contents
-- **index.html** — Home page and professional self-assessment
-- **code-review.html** — Informal code review and planned enhancements
-- **artifact1.html** — Software Engineering & Design enhancement
-- **artifact2.html** — Algorithms & Data Structures enhancement
-- **artifact3.html** — Databases enhancement
-- **enhancement folders** — Original and enhanced code for each category
+Each artifact includes original code, enhancements, reflections, and documentation aligned with course outcomes.
+
+## Artifacts & Enhancements
+| Artifact | Description | Original Code | Enhanced Code |
+|----------|-------------|---------------|---------------|
+| Software Design & Engineering | Refactored validation, encapsulation, defensive programming, negative unit tests | [Link](https://github.com/MohammedAlshehabi/CS_499_eportfolio/tree/main/enahncement-Software%20engineering%20and%20design/orgianl-code) | [Link](https://github.com/MohammedAlshehabi/CS_499_eportfolio/tree/main/enahncement-Software%20engineering%20and%20design/enhancedCode) |
+| Algorithms & Data Structures | Replaced ArrayList with LinkedHashMap, optimized operations, refactored logic | [Link](https://github.com/MohammedAlshehabi/CS_499_eportfolio/tree/main/enhancement-%20Algorithms%20and%20data%20structure/orignalCodeFile) | [Link](https://github.com/MohammedAlshehabi/CS_499_eportfolio/tree/main/enhancement-%20Algorithms%20and%20data%20structure/enhancedCodeFiles) |
+| Databases | Added SQLite database, CRUD operations, prepared statements, indexing, database-backed unit tests | [Link](https://github.com/MohammedAlshehabi/CS_499_eportfolio/tree/main/enhancement-Databases/orignalCodeFile) | [Link](https://github.com/MohammedAlshehabi/CS_499_eportfolio/tree/main/enhancement-Databases/EnhancedCodeFiles_3) |
 
 ## Course Outcomes Demonstrated
-1. Collaborative development strategies  
-2. Professional communication in multiple formats  
-3. Algorithmic and design solution evaluation  
-4. Well-founded and innovative computing techniques  
-5. Security mindset for software design
+1. Outcome 1 – Collaboration & Organizational Skills  
+2. Outcome 2 – Professional Documentation & Communication  
+3. Outcome 3 – Algorithmic & Design Solutions  
+4. Outcome 4 – Well-founded Techniques & Tools  
+5. Outcome 5 – Security Mindset  
 
-## Notes
-All original and enhanced code files are included in their respective folders. Each artifact page links to the corresponding code for easy review.
-# CS_499_eportfolio
+## Reflections
+This ePortfolio connects classroom learning to professional practice. Enhancing artifacts taught me defensive programming, clean code principles, efficient algorithms, and database persistence. Integration of journals and milestones provides evidence of skills, growth, and readiness for backend development and professional software engineering roles.
