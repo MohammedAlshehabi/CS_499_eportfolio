@@ -155,6 +155,22 @@
       font-size: 0.98rem;
     }
 
+    /* Emphasis Box */
+    .emphasis-box {
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.1), rgba(34, 197, 94, 0.05));
+      border-left: 4px solid #22c55e;
+      border-radius: 8px;
+      padding: 25px;
+      margin: 25px 0;
+      font-size: 1.05rem;
+      line-height: 1.9;
+      color: #d1d5db;
+    }
+
+    .emphasis-box strong {
+      color: #22c55e;
+    }
+
     /* Button Styles */
     .button-group {
       display: flex;
@@ -237,6 +253,46 @@
       margin-bottom: 15px;
     }
 
+    /* Skills Grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin: 20px 0;
+    }
+
+    .skill-category {
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.08), rgba(34, 197, 94, 0.03));
+      border: 1px solid rgba(56, 189, 248, 0.15);
+      border-radius: 12px;
+      padding: 25px;
+      transition: all 0.3s ease;
+    }
+
+    .skill-category:hover {
+      transform: translateY(-4px);
+      border-color: #22c55e;
+      box-shadow: 0 10px 30px rgba(34, 197, 94, 0.15);
+    }
+
+    .skill-category h4 {
+      color: #22c55e;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .skill-category ul {
+      margin-left: 20px;
+    }
+
+    .skill-category li {
+      font-size: 0.9rem;
+      color: #d1d5db;
+    }
+
     /* Footer */
     footer {
       text-align: center;
@@ -280,12 +336,17 @@
       color: #22c55e;
       font-weight: 600;
     }
+
+    .blue-highlight {
+      color: #38bdf8;
+      font-weight: 600;
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>CS 499 ePortfolio</h1>
-    <p>Mohammed Alshehabi | Software Engineering & Design Excellence</p>
+    <p>Mohammed Alshehabi | Backend Developer & System Designer</p>
   </header>
 
   <nav>
@@ -297,37 +358,175 @@
   </nav>
 
   <main>
-    <section>
-      <h2>Welcome to My ePortfolio</h2>
-      <p>This portfolio showcases my professional growth in <span class="highlight">Software Engineering, Algorithms & Data Structures, and Database Design</span>. Throughout the CS 499 capstone course, I have demonstrated expertise in writing scalable, maintainable, and secure code aligned with industry best practices.</p>
-      
-      <h3>Portfolio Highlights</h3>
-      <ul>
-        <li>Three comprehensive artifacts with original and enhanced code implementations</li>
-        <li>Detailed reflections connecting theory to professional practice</li>
-        <li>Alignment with all five course outcomes</li>
-        <li>Evidence of defensive programming, clean code principles, and security mindset</li>
-      </ul>
-    </section>
-
+    <!-- Professional Self-Assessment Section (First) -->
     <section>
       <h2>Professional Self-Assessment</h2>
-      <p>Throughout this capstone experience, I have evolved from writing code that simply works to designing solutions that are maintainable, efficient, and secure. This portfolio demonstrates my ability to:</p>
+      
+      <div class="emphasis-box">
+        <strong>Throughout my Computer Science program, I have developed strong technical, analytical, and professional communication skills that prepare me for a career as a Backend Developer and System Designer.</strong> My coursework and capstone experience helped me move beyond writing basic functional code toward designing scalable, secure, and maintainable software systems.
+      </div>
+
+      <h3>Technical Growth & Core Competencies</h3>
+      <p>One of my most important areas of growth has been in <span class="highlight">software engineering practices</span>. Through enhancing my Contact Service application, I applied object-oriented design principles, refactored legacy code, improved encapsulation, and implemented defensive programming techniques such as strict input validation and structured exception handling. These improvements strengthened the reliability and maintainability of the system.</p>
+
+      <p>I also strengthened my understanding of <span class="highlight">algorithms and data structures</span> by evaluating performance limitations and replacing inefficient structures with more appropriate solutions. For example, I replaced an ArrayList with a LinkedHashMap to significantly improve lookup, update, and deletion performance. This demonstrated my ability to analyze time complexity, scalability, and efficiency in real-world applications.</p>
+
+      <p>In <span class="highlight">database development</span>, I integrated a relational database using SQLite and JDBC. I designed a relational schema, implemented CRUD operations, applied indexing for performance optimization, and used prepared statements to prevent SQL injection. This experience helped me understand persistence, secure data management, and layered software architecture.</p>
+
+      <h3>Security-First Mindset</h3>
+      <p><span class="highlight">Security has become a core principle in my development approach.</span> I actively apply secure coding practices including input validation, exception handling, data protection, and database security. I now design systems with a security-first mindset to ensure data integrity and system reliability.</p>
+
+      <h3>Professional Communication & Documentation</h3>
+      <p>My experience with code reviews, documentation, and portfolio development improved my ability to <span class="highlight">communicate technical concepts clearly and professionally</span>. I learned how to explain design decisions, justify improvements, and present technical work effectively.</p>
+
+      <h3>Readiness for Professional Software Development</h3>
+      <p>Overall, this ePortfolio demonstrates my <span class="highlight">readiness to contribute to professional software development environments.</span> It reflects my ability to design efficient backend systems, apply professional engineering standards, and build secure, scalable software solutions. I am prepared to transition from academic projects to real-world software development challenges.</p>
+    </section>
+
+    <!-- Introduction Section -->
+    <section>
+      <h2>Introduction</h2>
+      
+      <p>My name is <span class="highlight">Mohammed Alshehabi</span>, and I am a Computer Science student with a strong passion for backend development, system design, and software engineering. Throughout my academic journey, I have developed hands-on experience in designing, improving, and maintaining software systems using professional engineering practices.</p>
+
+      <p>My academic projects, especially the <span class="highlight">Contact Service application</span>, demonstrate my ability to apply object-oriented programming, algorithm optimization, database integration, and secure coding techniques. These experiences helped me transition from writing simple academic programs to building structured, scalable, and professional-quality software.</p>
+
+      <h3>Areas of Specialization</h3>
+      <p>I am particularly interested in how backend systems manage data, handle scalability, and ensure security. My learning has expanded beyond programming into areas such as networking, distributed systems, and database design, preparing me for real-world software development challenges. My specialization focuses on:</p>
       <ul>
-        <li>Analyze design trade-offs and implement optimal solutions</li>
-        <li>Optimize algorithms and data structures for real-world performance</li>
-        <li>Design and implement secure database architectures</li>
-        <li>Write comprehensive, well-documented code with professional standards</li>
-        <li>Reflect critically on improvements and lessons learned</li>
+        <li><span class="blue-highlight">Backend Service Architecture:</span> Designing robust, scalable backend systems</li>
+        <li><span class="blue-highlight">Database Design & Optimization:</span> Creating efficient data models and query optimization</li>
+        <li><span class="blue-highlight">System Performance & Scalability:</span> Building systems that scale from thousands to millions of users</li>
+        <li><span class="blue-highlight">Secure Software Development:</span> Implementing security best practices throughout the development lifecycle</li>
+        <li><span class="blue-highlight">Clean Architecture & Design:</span> Creating maintainable, professional-grade code</li>
+      </ul>
+
+      <p>I am <span class="highlight">committed to continuous learning and professional growth</span>, and I actively work on improving my technical, analytical, and problem-solving skills to prepare for a career in software engineering.</p>
+
+      <h3>Career Goals</h3>
+      <p>My primary career goal is to become a <span class="highlight">Backend Developer and System Designer</span>, focusing on building scalable, secure, and efficient software systems. As a Backend Developer, I aim to design and implement systems that manage data, handle business logic, and ensure system reliability and performance. As a System Designer, I aim to develop a deeper understanding of system architecture, scalability, networking, and distributed systems.</p>
+
+      <p>To support these goals, I plan to continue improving my skills in backend development, database design and management, system architecture, cloud technologies such as AWS, and advanced security practices.</p>
+    </section>
+
+    <!-- Summary of Skills -->
+    <section>
+      <h2>Summary of Technical Skills</h2>
+      <p>Through my academic coursework and capstone project, I have developed comprehensive technical and professional skills:</p>
+      
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h4>🔧 Software Engineering</h4>
+          <ul>
+            <li>Object-oriented programming (OOP)</li>
+            <li>Clean code & maintainable design</li>
+            <li>Refactoring & code improvement</li>
+            <li>Defensive programming patterns</li>
+            <li>Unit testing & TDD thinking</li>
+          </ul>
+        </div>
+
+        <div class="skill-category">
+          <h4>📊 Algorithms & Data Structures</h4>
+          <ul>
+            <li>Performance analysis & complexity</li>
+            <li>Efficient data structure selection</li>
+            <li>LinkedHashMap & HashMap optimization</li>
+            <li>Algorithm design & optimization</li>
+            <li>Scalability & performance tuning</li>
+          </ul>
+        </div>
+
+        <div class="skill-category">
+          <h4>🗄️ Database Development</h4>
+          <ul>
+            <li>Relational database design</li>
+            <li>SQLite & JDBC integration</li>
+            <li>CRUD implementation</li>
+            <li>Database indexing strategies</li>
+            <li>Query optimization</li>
+          </ul>
+        </div>
+
+        <div class="skill-category">
+          <h4>🛡️ Security Practices</h4>
+          <ul>
+            <li>Input validation & error handling</li>
+            <li>Secure database access</li>
+            <li>SQL injection prevention</li>
+            <li>Security-first system design</li>
+            <li>Data protection principles</li>
+          </ul>
+        </div>
+
+        <div class="skill-category">
+          <h4>🏗️ System Architecture</h4>
+          <ul>
+            <li>Layered architecture design</li>
+            <li>Repository pattern</li>
+            <li>Separation of concerns</li>
+            <li>Backend service design</li>
+            <li>Scalable patterns</li>
+          </ul>
+        </div>
+
+        <div class="skill-category">
+          <h4>💼 Professional Skills</h4>
+          <ul>
+            <li>Technical documentation</li>
+            <li>Code review & analysis</li>
+            <li>Problem solving</li>
+            <li>SDLC understanding</li>
+            <li>Professional communication</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Summary of Artifacts -->
+    <section>
+      <h2>Summary of Artifacts</h2>
+      <p>The primary artifact in this ePortfolio is the <span class="highlight">Contact Service application</span>, which demonstrates my growth in software engineering, algorithms, and database integration across three major enhancements:</p>
+
+      <h3>Software Design and Engineering Enhancement</h3>
+      <p>This enhancement improved the system's structure, maintainability, and reliability. I implemented strict input validation, improved encapsulation, refactored duplicated logic, and strengthened unit testing with comprehensive test coverage including negative scenarios. These changes demonstrate my ability to design clean, maintainable, and professional software that follows SOLID principles and defensive programming best practices.</p>
+
+      <h3>Algorithms and Data Structures Enhancement</h3>
+      <p>I improved the performance of the application by replacing an ArrayList with a LinkedHashMap, significantly improving lookup, update, and deletion efficiency from O(n) to O(1) while maintaining data order. This enhancement demonstrates my understanding of algorithm efficiency, complexity analysis, scalability considerations, and the ability to select appropriate data structures for specific performance requirements.</p>
+
+      <h3>Database Enhancement</h3>
+      <p>I integrated a SQLite relational database using JDBC to provide persistent data storage. I designed a normalized relational schema with proper constraints, implemented full CRUD operations, applied strategic indexing for query optimization, and used prepared statements to ensure secure data handling and prevent SQL injection attacks. This demonstrates my ability to build production-ready database-driven applications with security and performance as primary concerns.</p>
+    </section>
+
+    <!-- Course Outcomes -->
+    <section>
+      <h2>Course Outcomes Demonstrated</h2>
+      <ul>
+        <li><span class="highlight">Outcome 1:</span> Collaboration & Organizational Skills - Demonstrated through milestone documentation, version control best practices, and systematic project organization</li>
+        <li><span class="highlight">Outcome 2:</span> Professional Communication - Detailed reflections, comprehensive documentation, code comments, and clear explanations of technical decisions</li>
+        <li><span class="highlight">Outcome 3:</span> Algorithmic & Design Solutions - Data structure optimization, performance analysis, and strategic design decisions balancing trade-offs</li>
+        <li><span class="highlight">Outcome 4:</span> Well-founded Techniques & Tools - Application of industry best practices, Git version control, unit testing, database design, and professional development methodologies</li>
+        <li><span class="highlight">Outcome 5:</span> Security Mindset - Input validation, SQL injection prevention, defensive programming, secure database practices, and security-first system design</li>
       </ul>
     </section>
 
+    <!-- Quick Navigation -->
     <section>
-      <h2>Artifacts Overview</h2>
+      <h2>Explore the ePortfolio</h2>
+      <p>This ePortfolio contains my informal code review video, detailed artifact enhancements, and comprehensive narratives explaining my technical growth. Start with the code review to understand my analysis and enhancement strategy:</p>
+      
       <div class="card-grid">
         <div class="card">
-          <h3>🔧 Software Design & Engineering</h3>
-          <p>Refactored validation logic, improved encapsulation, implemented exception handling, and expanded unit test coverage for robustness.</p>
+          <h3>📹 Informal Code Review</h3>
+          <p>Watch my code analysis video where I review the original application, identify areas for improvement, and outline my enhancement strategy across all three artifacts.</p>
+          <div class="button-group">
+            <a href="code-review.html" class="btn btn-primary">View Code Review</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>🔧 Software Design Enhancement</h3>
+          <p>Explore my refactoring work focusing on clean code, defensive programming, exception handling, and comprehensive unit testing practices.</p>
           <div class="button-group">
             <a href="artifact1.html" class="btn btn-primary">View Details</a>
           </div>
@@ -335,45 +534,31 @@
 
         <div class="card">
           <h3>📊 Algorithms & Data Structures</h3>
-          <p>Replaced ArrayList with LinkedHashMap, optimized search operations from O(n) to O(1), and refactored duplicate logic for maintainability.</p>
+          <p>See how I optimized performance by replacing ArrayList with LinkedHashMap, improving complexity from O(n) to O(1) while maintaining functionality.</p>
           <div class="button-group">
             <a href="artifact2.html" class="btn btn-primary">View Details</a>
           </div>
         </div>
 
         <div class="card">
-          <h3>🗄️ Databases & Persistence</h3>
-          <p>Integrated SQLite database, implemented CRUD operations with prepared statements, added indexing, and built database-backed unit tests.</p>
+          <h3>🗄️ Database Integration</h3>
+          <p>Discover how I implemented a complete SQLite database layer with secure CRUD operations, proper schema design, indexing, and prepared statements.</p>
           <div class="button-group">
             <a href="artifact3.html" class="btn btn-primary">View Details</a>
           </div>
         </div>
       </div>
-    </section>
 
-    <section>
-      <h2>Course Outcomes Demonstrated</h2>
-      <ul>
-        <li><span class="highlight">Outcome 1:</span> Collaboration & Organizational Skills - Demonstrated through milestone documentation and version control practices</li>
-        <li><span class="highlight">Outcome 2:</span> Professional Communication - Detailed reflections, comprehensive documentation, and clear code comments</li>
-        <li><span class="highlight">Outcome 3:</span> Algorithmic & Design Solutions - Data structure optimization and design pattern implementation</li>
-        <li><span class="highlight">Outcome 4:</span> Well-founded Techniques & Tools - Git, unit testing, database design, and professional development practices</li>
-        <li><span class="highlight">Outcome 5:</span> Security Mindset - Input validation, SQL injection prevention, and defensive programming practices</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Quick Repository Links</h2>
       <div class="button-group">
         <a href="https://github.com/MohammedAlshehabi/CS_499_eportfolio" target="_blank" class="btn btn-primary">GitHub Repository</a>
-        <a href="https://mohammedalshehabi.github.io/CS_499_eportfolio/" target="_blank" class="btn btn-secondary">Live ePortfolio</a>
+        <a href="code-review.html" class="btn btn-secondary">Start with Code Review →</a>
       </div>
     </section>
   </main>
 
   <footer>
     <p>&copy; 2026 Mohammed Alshehabi | CS 499 Capstone ePortfolio</p>
-    <p>Last Updated: February 2026</p>
+    <p>Backend Development & System Design Focus | Last Updated: February 2026</p>
   </footer>
 </body>
 </html>
