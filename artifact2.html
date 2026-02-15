@@ -1,51 +1,465 @@
-<section class="portfolio-section">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Algorithms & Data Structures Enhancement - CS 499 ePortfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-  <div class="portfolio-header">
-    <h1>Algorithms & Data Structures Enhancement</h1>
-    <p class="subtitle">Performance Optimization Artifact</p>
-  </div>
+    body {
+      font-family: 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #0f172a 0%, #1a1f3a 100%);
+      color: #e5e7eb;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
 
-  <div class="info-grid">
-    <div class="info-card">
-      <h3>Artifact</h3>
-      <p>Contact Service Application</p>
-    </div>
+    header {
+      background: linear-gradient(135deg, #0a3d62 0%, #020617 100%);
+      border-bottom: 3px solid #22c55e;
+      padding: 60px 20px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    }
 
-    <div class="info-card">
-      <h3>Enhancements</h3>
-      <p>
-        Replaced ArrayList with LinkedHashMap, optimized lookup, update, and delete 
-        operations, and reduced duplicate logic.
-      </p>
-    </div>
+    header h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 3.2rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #38bdf8, #22c55e);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
 
-    <div class="info-card">
-      <h3>Course Outcomes</h3>
-      <p>
-        Outcome 2 (Documentation)<br>
-        Outcome 3 (Algorithmic Efficiency)<br>
-        Outcome 4 (Professional Techniques)
-      </p>
-    </div>
-  </div>
+    header p {
+      font-size: 1.2rem;
+      color: #94a3b8;
+      font-weight: 400;
+    }
 
-  <h2 class="section-title">Code Access</h2>
-  <div class="code-links">
-    <a class="code-btn" href="https://github.com/MohammedAlshehabi/CS_499_eportfolio/tree/main/enhancement-%20Algorithms%20and%20data%20structure/orignalCodeFile" target="_blank">
-      Original Code
-    </a>
-    <a class="code-btn" href="https://github.com/MohammedAlshehabi/CS_499_eportfolio/tree/main/enhancement-%20Algorithms%20and%20data%20structure/enhancedCodeFiles" target="_blank">
-      Enhanced Code
-    </a>
-  </div>
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      background: linear-gradient(90deg, #0a3d62, #1a1f3a);
+      padding: 15px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    }
 
-  <h2 class="section-title">Reflection</h2>
-  <div class="reflection-box">
-    Optimizing the data structure significantly improved performance, scalability, and 
-    long-term maintainability. Refactoring reduced duplicated logic and enforced consistent 
-    error handling patterns across the application. This enhancement demonstrated how 
-    strategic data structure selection directly impacts real-world software efficiency 
-    and system reliability.
-  </div>
+    nav a {
+      color: #e5e7eb;
+      text-decoration: none;
+      padding: 12px 24px;
+      font-weight: 600;
+      border-radius: 25px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      transition: all 0.3s ease;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
 
-</section>
+    nav a:hover,
+    nav a.active {
+      background: linear-gradient(135deg, #38bdf8, #22c55e);
+      color: #020617;
+      border-color: #22c55e;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(34, 197, 94, 0.4);
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 50px auto;
+      padding: 20px;
+    }
+
+    section {
+      background: linear-gradient(135deg, #0f172a, #1a1f3a);
+      border-radius: 16px;
+      padding: 45px;
+      margin: 30px 0;
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+      animation: fadeIn 0.6s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2rem;
+      color: #22c55e;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-bottom: 3px solid #38bdf8;
+      padding-bottom: 15px;
+    }
+
+    h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.3rem;
+      color: #38bdf8;
+      margin: 25px 0 12px;
+    }
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 15px;
+      color: #d1d5db;
+      line-height: 1.8;
+    }
+
+    ul, ol {
+      margin-left: 25px;
+      margin-bottom: 20px;
+    }
+
+    li {
+      margin-bottom: 12px;
+      color: #d1d5db;
+      font-size: 0.98rem;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin: 30px 0;
+    }
+
+    .info-card {
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.1), rgba(34, 197, 94, 0.1));
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      border-radius: 12px;
+      padding: 25px;
+      transition: all 0.3s ease;
+    }
+
+    .info-card:hover {
+      transform: translateY(-6px);
+      border-color: #22c55e;
+      box-shadow: 0 10px 30px rgba(34, 197, 94, 0.2);
+    }
+
+    .info-card h4 {
+      color: #38bdf8;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .info-card p {
+      font-size: 0.95rem;
+      margin-bottom: 0;
+    }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 25px 0;
+      background: rgba(255, 255, 255, 0.02);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+      padding: 15px;
+      text-align: left;
+      border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+    }
+
+    .comparison-table th {
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(34, 197, 94, 0.1));
+      color: #22c55e;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-size: 0.9rem;
+    }
+
+    .comparison-table td {
+      color: #d1d5db;
+    }
+
+    .comparison-table tr:hover {
+      background: rgba(56, 189, 248, 0.1);
+    }
+
+    .button-group {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin: 25px 0;
+    }
+
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #38bdf8, #22c55e);
+      color: #020617;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-4px) scale(1.05);
+      box-shadow: 0 12px 30px rgba(56, 189, 248, 0.5);
+    }
+
+    .reflection-box {
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.1), rgba(34, 197, 94, 0.05));
+      border-left: 4px solid #22c55e;
+      border-radius: 8px;
+      padding: 30px;
+      margin: 25px 0;
+      font-style: italic;
+      color: #d1d5db;
+      line-height: 1.9;
+      box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .highlight {
+      color: #22c55e;
+      font-weight: 600;
+    }
+
+    .code-block {
+      background: rgba(0, 0, 0, 0.3);
+      border-left: 3px solid #38bdf8;
+      padding: 15px;
+      border-radius: 6px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.9rem;
+      margin: 15px 0;
+      overflow-x: auto;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      background: linear-gradient(135deg, #0a3d62, #020617);
+      color: #94a3b8;
+      margin-top: 60px;
+      border-top: 3px solid #22c55e;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      section {
+        padding: 30px;
+      }
+
+      nav {
+        gap: 8px;
+      }
+
+      nav a {
+        padding: 10px 16px;
+        font-size: 0.85rem;
+      }
+
+      .comparison-table th,
+      .comparison-table td {
+        padding: 10px;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Algorithms & Data Structures</h1>
+    <p>Enhancement Artifact | Performance Optimization</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="code-review.html">Code Review</a>
+    <a href="artifact1.html">Software Design</a>
+    <a href="artifact2.html" class="active">Algorithms</a>
+    <a href="artifact3.html">Databases</a>
+  </nav>
+
+  <main>
+    <section>
+      <h2>Artifact Overview</h2>
+      <div class="info-grid">
+        <div class="info-card">
+          <h4>Application</h4>
+          <p>Contact Service Application</p>
+        </div>
+        <div class="info-card">
+          <h4>Primary Language</h4>
+          <p>Java</p>
+        </div>
+        <div class="info-card">
+          <h4>Course Outcomes</h4>
+          <p>Outcomes 2, 3, & 4</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Enhancement Focus</h2>
+      <h3>Key Improvements</h3>
+      <ul>
+        <li><span class="highlight">Data Structure Optimization:</span> Replaced ArrayList with LinkedHashMap for O(1) lookup operations</li>
+        <li><span class="highlight">Algorithm Efficiency:</span> Reduced search operations from O(n) to O(1) complexity</li>
+        <li><span class="highlight">Code Refactoring:</span> Eliminated duplicate logic and improved code reusability</li>
+        <li><span class="highlight">Maintainability:</span> Enhanced code organization and method extraction</li>
+        <li><span class="highlight">Performance Analysis:</span> Documented performance improvements and trade-offs</li>
+      </ul>
+
+      <h3>Performance Comparison</h3>
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Operation</th>
+            <th>ArrayList (Original)</th>
+            <th>LinkedHashMap (Enhanced)</th>
+            <th>Improvement</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Search Contact by ID</td>
+            <td>O(n)</td>
+            <td>O(1)</td>
+            <td>Significant (Linear to Constant)</td>
+          </tr>
+          <tr>
+            <td>Update Contact</td>
+            <td>O(n)</td>
+            <td>O(1)</td>
+            <td>Significant</td>
+          </tr>
+          <tr>
+            <td>Delete Contact</td>
+            <td>O(n)</td>
+            <td>O(1)</td>
+            <td>Significant</td>
+          </tr>
+          <tr>
+            <td>Add Contact</td>
+            <td>O(1) amortized</td>
+            <td>O(1)</td>
+            <td>Consistent</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Technical Implementation</h2>
+      <h3>Data Structure Selection</h3>
+      <p>The original implementation used ArrayList for storing contacts, requiring linear search through all elements for lookup operations. By switching to LinkedHashMap:</p>
+      <ul>
+        <li>Maintains insertion order (important for contact management)</li>
+        <li>Provides O(1) average-case lookup performance</li>
+        <li>Simplifies update and delete operations</li>
+        <li>Reduces algorithmic complexity without sacrificing functionality</li>
+      </ul>
+
+      <h3>Refactoring Benefits</h3>
+      <p>Beyond performance improvements, the refactoring achieved:</p>
+      <ul>
+        <li>Eliminated duplicated search logic across multiple methods</li>
+        <li>Reduced code lines and improved readability</li>
+        <li>Created more testable, modular code</li>
+        <li>Enabled easier future enhancements and maintenance</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Code Access</h2>
+      <div class="button-group">
+        <a href="https://github.com/MohammedAlshehabi/CS_499_eportfolio/tree/main/enhancement-%20Algorithms%20and%20data%20structure/orignalCodeFile" target="_blank" class="btn btn-primary">Original Code</a>
+        <a href="https://github.com/MohammedAlshehabi/CS_499_eportfolio/tree/main/enhancement-%20Algorithms%20and%20data%20structure/enhancedCodeFiles" target="_blank" class="btn btn-primary">Enhanced Code</a>
+      </div>
+    </section>
+
+    <section>
+      <h2>Professional Reflection</h2>
+      <div class="reflection-box">
+        <p>This enhancement taught me a crucial lesson: algorithmic efficiency directly impacts real-world application performance. Moving from ArrayList to LinkedHashMap wasn't just about changing a data structure—it was about understanding how design decisions cascade through a system.</p>
+
+        <p>Key learnings from this experience:</p>
+        <ul>
+          <li><strong>Understand Complexity:</strong> Recognizing O(n) vs O(1) operations is essential for scalable design</li>
+          <li><strong>Choose Appropriate Tools:</strong> Different data structures serve different use cases; HashMaps excel at lookups</li>
+          <li><strong>Measure Impact:</strong> Performance improvements are quantifiable and can be documented</li>
+          <li><strong>Maintain Functionality:</strong> Optimization shouldn't sacrifice features; LinkedHashMap preserves insertion order</li>
+          <li><strong>Reduce Duplication:</strong> Refactoring revealed repeated logic that could be eliminated</li>
+        </ul>
+
+        <p>This work demonstrates my ability to analyze code critically, identify optimization opportunities, and implement solutions that improve both performance and maintainability.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Course Outcomes Alignment</h2>
+      <h3>Outcome 2: Professional Communication</h3>
+      <p>Documented performance improvements with complexity analysis and clear explanations of design decisions.</p>
+
+      <h3>Outcome 3: Algorithmic Efficiency</h3>
+      <p>Analyzed algorithm complexity, identified optimization opportunities, and implemented efficient data structures.</p>
+
+      <h3>Outcome 4: Professional Techniques & Tools</h3>
+      <p>Applied industry best practices in algorithm selection, code refactoring, and performance optimization.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Mohammed Alshehabi | CS 499 Capstone ePortfolio</p>
+    <p>Last Updated: February 2026</p>
+  </footer>
+</body>
+</html>
