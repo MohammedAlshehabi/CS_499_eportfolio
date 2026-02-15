@@ -195,6 +195,34 @@
       font-weight: 600;
     }
 
+    .feature-box p {
+      margin-bottom: 0;
+    }
+
+    /* Image Container */
+    .image-container {
+      margin: 30px 0;
+      text-align: center;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .image-container img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 12px;
+    }
+
+    .image-caption {
+      margin-top: 12px;
+      font-size: 0.9rem;
+      color: #94a3b8;
+      font-style: italic;
+      text-align: center;
+    }
+
     .button-group {
       display: flex;
       gap: 15px;
@@ -244,15 +272,9 @@
       font-weight: 600;
     }
 
-    .code-block {
-      background: rgba(0, 0, 0, 0.3);
-      border-left: 3px solid #38bdf8;
-      padding: 15px;
-      border-radius: 6px;
-      font-family: 'Courier New', monospace;
-      font-size: 0.9rem;
-      margin: 15px 0;
-      overflow-x: auto;
+    .blue-highlight {
+      color: #38bdf8;
+      font-weight: 600;
     }
 
     footer {
@@ -304,16 +326,40 @@
   </nav>
 
   <main>
+    <!-- Artifact Description -->
     <section>
-      <h2>Artifact Overview</h2>
+      <h2>Artifact Description</h2>
+      <p>The artifact I selected for this enhancement is an improved <span class="highlight">Contact Service application</span> that I originally created in CS 320. The original version of this application stored contacts in memory using an ArrayList. Contacts were lost when the application was closed and there was no persistence. The service allowed adding, retrieving, updating, and deleting contacts, but all data existed only while the program ran.</p>
+
+      <p>For Milestone Four, I enhanced this artifact to include a <span class="highlight">relational database using SQLite and JDBC</span>. The enhancement added a persistent database layer so contacts are now stored in a database file and remain after the program closes. The application now demonstrates full CRUD functionality with a relational database schema.</p>
+
+      <h3>Justification for Inclusion in the ePortfolio</h3>
+      <p>I selected this artifact for my ePortfolio because it shows my ability to <span class="highlight">design and implement a database-backed application</span>. The original Contact Service was a good starting point for this enhancement. It shows how I can move from basic in-memory data structures to real-world database persistence.</p>
+
+      <p>The enhanced artifact demonstrates the following skills:</p>
+      <ul>
+        <li>Designing a relational database schema with constraints that enforce data integrity</li>
+        <li>Using SQLite as a lightweight, file-based database</li>
+        <li>Implementing a repository pattern to separate business logic from data access logic</li>
+        <li>Using prepared statements for all SQL operations to prevent SQL injection</li>
+        <li>Adding indexes to improve query performance</li>
+        <li>Writing database-backed tests that verify real CRUD behavior</li>
+      </ul>
+
+      <p>These enhancements improved the application by replacing in-memory storage with a persistent database layer. This makes the software more scalable, maintainable, and professional.</p>
+    </section>
+
+    <!-- Overview Cards -->
+    <section>
+      <h2>Enhancement Overview</h2>
       <div class="info-grid">
         <div class="info-card">
           <h4>Application</h4>
-          <p>Contact Service Application</p>
+          <p>Contact Service Application (Java)</p>
         </div>
         <div class="info-card">
-          <h4>Database</h4>
-          <p>SQLite</p>
+          <h4>Database Technology</h4>
+          <p>SQLite with JDBC</p>
         </div>
         <div class="info-card">
           <h4>Course Outcomes</h4>
@@ -322,17 +368,14 @@
       </div>
     </section>
 
+    <!-- Description of Enhancements -->
     <section>
-      <h2>Enhancement Focus</h2>
-      <h3>Key Improvements</h3>
-      <ul>
-        <li><span class="highlight">Database Integration:</span> Added SQLite persistence layer for data durability</li>
-        <li><span class="highlight">CRUD Operations:</span> Implemented Create, Read, Update, Delete functionality with database backing</li>
-        <li><span class="highlight">Security:</span> Used prepared statements to prevent SQL injection attacks</li>
-        <li><span class="highlight">Performance:</span> Added database indexing on frequently queried columns</li>
-        <li><span class="highlight">Testing:</span> Implemented database-backed integration tests for validation</li>
-        <li><span class="highlight">Architecture:</span> Created repository pattern for clean data access layer separation</li>
-      </ul>
+      <h2>Description of Enhancements</h2>
+      <p>The main enhancement was <span class="highlight">adding SQLite and JDBC to store contacts in a database file</span>. I created a table called Contacts with fields for contact ID, first name, last name, phone number, and address. I added constraints to ensure correct data lengths and types.</p>
+
+      <p>I created a <span class="blue-highlight">ContactRepository</span> interface with methods to create, find, update, and delete contacts. <span class="blue-highlight">JdbcContactRepository</span> implements this interface using prepared statements. The ContactService class now uses the repository instead of directly managing an ArrayList.</p>
+
+      <p>I also added <span class="highlight">indexes to improve query performance</span>. Database-backed unit tests were written to verify that contacts are correctly created, retrieved, updated, and deleted. Proper exception handling and resource management were included to ensure the application works safely and reliably.</p>
 
       <h3>Core Features Implemented</h3>
 
@@ -357,48 +400,64 @@
       </div>
     </section>
 
+    <!-- Database Testing Evidence -->
     <section>
-      <h2>Database Schema</h2>
-      <p>The Contact table is designed with proper constraints and indexing:</p>
-      <div class="code-block">
-CREATE TABLE Contact (
-  contactId TEXT PRIMARY KEY,
-  firstName TEXT NOT NULL,
-  lastName TEXT NOT NULL,
-  phone TEXT NOT NULL UNIQUE,
-  email TEXT NOT NULL UNIQUE,
-  address TEXT,
-  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-
-CREATE INDEX idx_contactId ON Contact(contactId);
-CREATE INDEX idx_email ON Contact(email);
+      <h2>Database Testing Evidence</h2>
+      <p>Below is evidence of database-backed integration testing demonstrating successful CRUD operations and data persistence validation:</p>
+      
+      <div class="image-container">
+        <img src="https://raw.githubusercontent.com/MohammedAlshehabi/CS_499_eportfolio/main/enhancement-Databases/DataBase_addContactTest.JPG" alt="Database Add Contact Test Results">
+        <div class="image-caption">Figure 1: Database Integration Test - Add Contact Test Results showing successful database insertion and verification</div>
       </div>
 
-      <h3>Design Decisions</h3>
+      <p>This test demonstrates the successful integration of the SQLite database with the Contact Service application. The test verifies:</p>
       <ul>
-        <li><strong>Text Primary Key:</strong> Contact ID is a unique text identifier for business logic</li>
-        <li><strong>Unique Constraints:</strong> Phone and email fields enforce uniqueness at database level</li>
-        <li><strong>Timestamps:</strong> Track record creation and modification for audit trails</li>
-        <li><strong>Indexing:</strong> Optimize queries on frequently searched columns</li>
+        <li>Contact creation and insertion into the database</li>
+        <li>Data persistence across application restarts</li>
+        <li>Proper constraint enforcement</li>
+        <li>Correct retrieval of stored contact information</li>
       </ul>
     </section>
 
+    <!-- Code Access -->
     <section>
-      <h2>Code Access</h2>
+      <h2>Code Access & Repository</h2>
+      <p>View the original and enhanced code implementations in the GitHub repository:</p>
       <div class="button-group">
-        <a href="https://github.com/MohammedAlshehabi/CS_499_eportfolio/tree/main/enhancement-Databases/orignalCodeFile" target="_blank" class="btn btn-primary">Original Code</a>
-        <a href="https://github.com/MohammedAlshehabi/CS_499_eportfolio/tree/main/enhancement-Databases/EnhancedCodeFiles_3" target="_blank" class="btn btn-primary">Enhanced Code</a>
+        <a href="https://github.com/MohammedAlshehabi/CS_499_eportfolio/tree/main/enhancement-Databases/orignalCodeFile" target="_blank" class="btn btn-primary">View Original Code</a>
+        <a href="https://github.com/MohammedAlshehabi/CS_499_eportfolio/tree/main/enhancement-Databases/EnhancedCodeFiles_3" target="_blank" class="btn btn-primary">View Enhanced Code</a>
       </div>
     </section>
 
+    <!-- Course Outcomes Coverage -->
     <section>
-      <h2>Professional Reflection</h2>
-      <div class="reflection-box">
-        <p>Adding database persistence transformed my understanding of what "production-ready" software truly means. This enhancement taught me that a well-designed system must consider data durability, security, and scalability from the ground up.</p>
+      <h2>Course Outcomes and Outcome Coverage</h2>
+      <p>The work completed in this milestone meets the outcomes planned in Module One. This enhancement strongly supports all course outcomes:</p>
 
-        <p>Critical lessons from this experience:</p>
+      <h3>Outcome 2: Professional Communication</h3>
+      <p>Documented database design decisions, schema rationale, and implementation details with clear explanations. Technical documentation clearly explains design choices and justifies enhancements.</p>
+
+      <h3>Outcome 3: Design & Algorithm Trade-offs</h3>
+      <p>This enhancement shows awareness of algorithmic trade-offs through <span class="highlight">indexing and query structure</span>. Decisions about data structure selection and indexing strategies demonstrate understanding of performance implications.</p>
+
+      <h3>Outcome 4: Professional Techniques & Tools</h3>
+      <p>Applied well-founded techniques such as <span class="highlight">layered architecture, repository patterns, JDBC usage, and automated tests</span>. Integration of industry best practices in database design and implementation.</p>
+
+      <h3>Outcome 5: Security Mindset</h3>
+      <p>Implemented security best practices including <span class="highlight">prepared statements, input validation, database constraints, and safe exception handling</span>. Security-first approach prevents vulnerabilities like SQL injection.</p>
+
+      <p><strong>No changes were needed to the original outcome coverage plan</strong> because the enhancement followed the planned strategy.</p>
+    </section>
+
+    <!-- Reflection on Enhancement -->
+    <section>
+      <h2>Reflection on the Enhancement Process</h2>
+      <div class="reflection-box">
+        <p>Working on this enhancement helped me understand how to integrate a database into a Java application. I learned how to move responsibilities from application code to the database using constraints, indexes, and schema design. A challenge was keeping the tests reliable and the database in a clean state for each test. I solved this by setting up proper initialization and using try-with-resources.</p>
+
+        <p>I also learned the importance of exception handling and closing connections properly. Overall, this enhancement helped me bridge the gap between academic examples and real-world development. The Contact Service is now a fully persistent application. It demonstrates my ability to design relational schemas, implement secure database access, and integrate persistence into clean software architecture.</p>
+
+        <p><strong>Key Learning Outcomes:</strong></p>
         <ul>
           <li><strong>Security is Paramount:</strong> SQL injection is a real threat; prepared statements are non-negotiable</li>
           <li><strong>Schema Design Matters:</strong> Proper indexing and constraints significantly impact performance and data integrity</li>
@@ -411,19 +470,22 @@ CREATE INDEX idx_email ON Contact(email);
       </div>
     </section>
 
+    <!-- Conclusion -->
     <section>
-      <h2>Course Outcomes Alignment</h2>
-      <h3>Outcome 2: Professional Communication</h3>
-      <p>Documented database design decisions, schema rationale, and implementation details with clear explanations.</p>
+      <h2>Conclusion</h2>
+      <p>This <span class="highlight">database enhancement transformed the Contact Service from a simple in-memory application into a database-driven system</span>. It now shows my skills in relational design, persistence, and secure database access. The artifact is a strong representation of my database skills and is a valuable part of my professional ePortfolio.</p>
 
-      <h3>Outcome 3: Design & Algorithm Trade-offs</h3>
-      <p>Analyzed data structure choices and indexing strategies for optimal performance and maintainability.</p>
+      <p>The integration of SQLite and JDBC demonstrates my ability to:</p>
+      <ul>
+        <li>Design normalized relational schemas</li>
+        <li>Implement secure CRUD operations</li>
+        <li>Apply performance optimization techniques</li>
+        <li>Follow professional architecture patterns</li>
+        <li>Write comprehensive database-backed tests</li>
+        <li>Build production-ready persistence layers</li>
+      </ul>
 
-      <h3>Outcome 4: Professional Techniques & Tools</h3>
-      <p>Applied industry best practices in database design, ORM patterns, and integration testing frameworks.</p>
-
-      <h3>Outcome 5: Security Mindset</h3>
-      <p>Implemented security best practices including prepared statements, input validation, and constraint enforcement to prevent vulnerabilities.</p>
+      <p>This artifact provides concrete evidence of my readiness to contribute to professional backend development teams and design scalable, secure database solutions.</p>
     </section>
   </main>
 
