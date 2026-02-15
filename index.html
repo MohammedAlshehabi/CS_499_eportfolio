@@ -1,160 +1,379 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CS 499 ePortfolio - Mohammed Alshehabi</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CS 499 ePortfolio - Mohammed Alshehabi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-<!-- Google Fonts for Modern Look -->
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    body {
+      font-family: 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #0f172a 0%, #1a1f3a 100%);
+      color: #e5e7eb;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
 
-<style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+    /* Header Styles */
+    header {
+      background: linear-gradient(135deg, #0a3d62 0%, #020617 100%);
+      border-bottom: 3px solid #22c55e;
+      padding: 60px 20px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    }
 
-  body { 
-    font-family: 'Segoe UI', sans-serif; 
-    background: #0f172a; 
-    color: #e5e7eb; 
-  }
+    header h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 3.2rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #38bdf8, #22c55e);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
 
-  header {
-    text-align: center;
-    padding: 50px 20px;
-    background: linear-gradient(145deg, #0a3d62, #020617);
-    border-bottom: 2px solid #22c55e;
-  }
+    header p {
+      font-size: 1.2rem;
+      color: #94a3b8;
+      font-weight: 400;
+    }
 
-  header h1 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 3rem;
-    background: linear-gradient(to right, #38bdf8, #22c55e);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 10px;
-  }
+    /* Navigation */
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      background: linear-gradient(90deg, #0a3d62, #1a1f3a);
+      padding: 15px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    }
 
-  header p {
-    font-size: 1.2rem;
-    color: #94a3b8;
-  }
+    nav a {
+      color: #e5e7eb;
+      text-decoration: none;
+      padding: 12px 24px;
+      font-weight: 600;
+      border-radius: 25px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      transition: all 0.3s ease;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
 
-  nav {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    background: #1e90ff;
-    padding: 12px 0;
-  }
+    nav a:hover {
+      background: linear-gradient(135deg, #38bdf8, #22c55e);
+      color: #020617;
+      border-color: #22c55e;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(34, 197, 94, 0.4);
+    }
 
-  nav a {
-    color: #fff;
-    text-decoration: none;
-    padding: 14px 25px;
-    font-weight: 600;
-    margin: 4px;
-    border-radius: 8px;
-    transition: 0.3s ease;
-  }
+    nav a.active {
+      background: linear-gradient(135deg, #38bdf8, #22c55e);
+      color: #020617;
+      box-shadow: 0 8px 20px rgba(34, 197, 94, 0.4);
+    }
 
-  nav a:hover {
-    background: #22c55e;
-    color: #020617;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(34,197,94,0.3);
-  }
+    /* Main Container */
+    main {
+      max-width: 1000px;
+      margin: 50px auto;
+      padding: 20px;
+    }
 
-  section {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 40px;
-    background: linear-gradient(145deg, #020617, #111827);
-    border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-  }
+    /* Section Styles */
+    section {
+      background: linear-gradient(135deg, #0f172a, #1a1f3a);
+      border-radius: 16px;
+      padding: 45px;
+      margin: 30px 0;
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+      animation: fadeIn 0.6s ease-in;
+    }
 
-  h2 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.6rem;
-    color: #22c55e;
-    margin-bottom: 15px;
-  }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-  p {
-    margin-bottom: 18px;
-    line-height: 1.8;
-    color: #e5e7eb;
-  }
+    h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2rem;
+      color: #22c55e;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-bottom: 3px solid #38bdf8;
+      padding-bottom: 15px;
+    }
 
-  ul {
-    margin-left: 20px;
-    margin-bottom: 15px;
-  }
+    h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.3rem;
+      color: #38bdf8;
+      margin: 25px 0 12px;
+    }
 
-  li {
-    margin-bottom: 12px;
-  }
+    p {
+      font-size: 1rem;
+      margin-bottom: 15px;
+      color: #d1d5db;
+      line-height: 1.8;
+    }
 
-  .code-link {
-    display: inline-block;
-    text-decoration: none;
-    padding: 10px 20px;
-    background: linear-gradient(to right, #38bdf8, #22c55e);
-    color: #020617;
-    font-weight: 600;
-    border-radius: 30px;
-    transition: 0.3s ease;
-    box-shadow: 0 6px 15px rgba(34,197,94,0.25);
-  }
+    ul, ol {
+      margin-left: 25px;
+      margin-bottom: 20px;
+    }
 
-  .code-link:hover {
-    transform: translateY(-3px) scale(1.03);
-    box-shadow: 0 10px 25px rgba(56, 189, 248, 0.35);
-  }
+    li {
+      margin-bottom: 12px;
+      color: #d1d5db;
+      font-size: 0.98rem;
+    }
 
-  footer {
-    text-align: center;
-    padding: 25px;
-    background: linear-gradient(145deg, #0a3d62, #020617);
-    color: #e5e7eb;
-    margin-top: 30px;
-    font-size: 0.95rem;
-    border-top: 2px solid #22c55e;
-  }
-</style>
+    /* Button Styles */
+    .button-group {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin: 25px 0;
+    }
+
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #38bdf8, #22c55e);
+      color: #020617;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-4px) scale(1.05);
+      box-shadow: 0 12px 30px rgba(56, 189, 248, 0.5);
+    }
+
+    .btn-secondary {
+      background: rgba(56, 189, 248, 0.1);
+      color: #38bdf8;
+      border: 2px solid #38bdf8;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(56, 189, 248, 0.2);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(56, 189, 248, 0.3);
+    }
+
+    /* Card Styles */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin: 30px 0;
+    }
+
+    .card {
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.05), rgba(34, 197, 94, 0.05));
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      border-radius: 14px;
+      padding: 30px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      min-height: 220px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      border-color: #22c55e;
+      box-shadow: 0 15px 40px rgba(34, 197, 94, 0.25);
+    }
+
+    .card h3 {
+      font-size: 1.3rem;
+      margin-top: 0;
+      color: #22c55e;
+    }
+
+    .card p {
+      flex-grow: 1;
+      margin-bottom: 15px;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      background: linear-gradient(135deg, #0a3d62, #020617);
+      color: #94a3b8;
+      margin-top: 60px;
+      border-top: 3px solid #22c55e;
+      font-size: 0.95rem;
+    }
+
+    footer p {
+      margin-bottom: 8px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      section {
+        padding: 30px;
+      }
+
+      nav {
+        gap: 8px;
+      }
+
+      nav a {
+        padding: 10px 16px;
+        font-size: 0.85rem;
+      }
+    }
+
+    .highlight {
+      color: #22c55e;
+      font-weight: 600;
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <h1>CS 499 ePortfolio</h1>
+    <p>Mohammed Alshehabi | Software Engineering & Design Excellence</p>
+  </header>
 
-<header>
-  <h1>CS 499 ePortfolio</h1>
-  <p>Mohammed Alshehabi | Backend Development & Software Design</p>
-</header>
+  <nav>
+    <a href="index.html" class="active">Home</a>
+    <a href="code-review.html">Code Review</a>
+    <a href="artifact1.html">Software Design</a>
+    <a href="artifact2.html">Algorithms</a>
+    <a href="artifact3.html">Databases</a>
+  </nav>
 
-<nav>
-  <a href="index.html">Home</a>
-  <a href="code-review.html">Code Review</a>
-  <a href="artifact1.html">Software Design</a>
-  <a href="artifact2.html">Algorithms & Data Structures</a>
-  <a href="artifact3.html">Databases</a>
-</nav>
+  <main>
+    <section>
+      <h2>Welcome to My ePortfolio</h2>
+      <p>This portfolio showcases my professional growth in <span class="highlight">Software Engineering, Algorithms & Data Structures, and Database Design</span>. Throughout the CS 499 capstone course, I have demonstrated expertise in writing scalable, maintainable, and secure code aligned with industry best practices.</p>
+      
+      <h3>Portfolio Highlights</h3>
+      <ul>
+        <li>Three comprehensive artifacts with original and enhanced code implementations</li>
+        <li>Detailed reflections connecting theory to professional practice</li>
+        <li>Alignment with all five course outcomes</li>
+        <li>Evidence of defensive programming, clean code principles, and security mindset</li>
+      </ul>
+    </section>
 
-<section>
-  <h2>Welcome</h2>
-  <p>Welcome to my CS 499 ePortfolio. This portfolio highlights my professional growth in software engineering, algorithms & data structures, and database design. Each artifact demonstrates enhancements, critical reflections, and alignment with course outcomes.</p>
+    <section>
+      <h2>Professional Self-Assessment</h2>
+      <p>Throughout this capstone experience, I have evolved from writing code that simply works to designing solutions that are maintainable, efficient, and secure. This portfolio demonstrates my ability to:</p>
+      <ul>
+        <li>Analyze design trade-offs and implement optimal solutions</li>
+        <li>Optimize algorithms and data structures for real-world performance</li>
+        <li>Design and implement secure database architectures</li>
+        <li>Write comprehensive, well-documented code with professional standards</li>
+        <li>Reflect critically on improvements and lessons learned</li>
+      </ul>
+    </section>
 
-  <h2>Professional Self-Assessment</h2>
-  <p>Throughout the capstone course, I have moved from simply writing working code to analyzing design, performance, and maintainability. This portfolio reflects my progress in building scalable, robust, and secure software solutions suitable for professional environments.</p>
+    <section>
+      <h2>Artifacts Overview</h2>
+      <div class="card-grid">
+        <div class="card">
+          <h3>🔧 Software Design & Engineering</h3>
+          <p>Refactored validation logic, improved encapsulation, implemented exception handling, and expanded unit test coverage for robustness.</p>
+          <div class="button-group">
+            <a href="artifact1.html" class="btn btn-primary">View Details</a>
+          </div>
+        </div>
 
-  <h2>Quick Links</h2>
-  <ul>
-    <li><a class="code-link" href="https://github.com/MohammedAlshehabi/CS_499_eportfolio/tree/main/enhancement-Software%20engineering%20and%20design" target="_blank">Software Design Enhancement Code</a></li>
-    <li><a class="code-link" href="https://github.com/MohammedAlshehabi/CS_499_eportfolio/tree/main/enhancement-Algorithms%20and%20data%20structures" target="_blank">Algorithms & Data Structures Enhancement Code</a></li>
-    <li><a class="code-link" href="https://github.com/MohammedAlshehabi/CS_499_eportfolio/tree/main/enhancement-Databases" target="_blank">Databases Enhancement Code</a></li>
-  </ul>
-</section>
+        <div class="card">
+          <h3>📊 Algorithms & Data Structures</h3>
+          <p>Replaced ArrayList with LinkedHashMap, optimized search operations from O(n) to O(1), and refactored duplicate logic for maintainability.</p>
+          <div class="button-group">
+            <a href="artifact2.html" class="btn btn-primary">View Details</a>
+          </div>
+        </div>
 
-<footer>
-  &copy; 2026 Mohammed Alshehabi
-</footer>
+        <div class="card">
+          <h3>🗄️ Databases & Persistence</h3>
+          <p>Integrated SQLite database, implemented CRUD operations with prepared statements, added indexing, and built database-backed unit tests.</p>
+          <div class="button-group">
+            <a href="artifact3.html" class="btn btn-primary">View Details</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <section>
+      <h2>Course Outcomes Demonstrated</h2>
+      <ul>
+        <li><span class="highlight">Outcome 1:</span> Collaboration & Organizational Skills - Demonstrated through milestone documentation and version control practices</li>
+        <li><span class="highlight">Outcome 2:</span> Professional Communication - Detailed reflections, comprehensive documentation, and clear code comments</li>
+        <li><span class="highlight">Outcome 3:</span> Algorithmic & Design Solutions - Data structure optimization and design pattern implementation</li>
+        <li><span class="highlight">Outcome 4:</span> Well-founded Techniques & Tools - Git, unit testing, database design, and professional development practices</li>
+        <li><span class="highlight">Outcome 5:</span> Security Mindset - Input validation, SQL injection prevention, and defensive programming practices</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Quick Repository Links</h2>
+      <div class="button-group">
+        <a href="https://github.com/MohammedAlshehabi/CS_499_eportfolio" target="_blank" class="btn btn-primary">GitHub Repository</a>
+        <a href="https://mohammedalshehabi.github.io/CS_499_eportfolio/" target="_blank" class="btn btn-secondary">Live ePortfolio</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Mohammed Alshehabi | CS 499 Capstone ePortfolio</p>
+    <p>Last Updated: February 2026</p>
+  </footer>
 </body>
 </html>
