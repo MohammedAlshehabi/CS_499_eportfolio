@@ -5,22 +5,110 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Code Review - CS 499 ePortfolio</title>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Roboto', sans-serif; background: #f7f9fc; color: #333; }
-header { background: #0a3d62; color: #fff; padding: 40px 20px; text-align: center; }
-header h1 { font-family: 'Montserrat', sans-serif; font-size: 2.5rem; margin-bottom: 10px; }
-nav { display: flex; justify-content: center; background: #1e90ff; flex-wrap: wrap; }
-nav a { color: #fff; text-decoration: none; padding: 15px 25px; font-weight: 600; transition: 0.3s; }
-nav a:hover { background: #1c6dd0; border-radius: 8px; }
-h1, h2 { font-family: 'Montserrat', sans-serif; color: #0a3d62; margin-bottom: 15px; }
-section { max-width: 1000px; margin: 30px auto; background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
-ul { margin-left: 20px; margin-bottom: 15px; }
-li { margin-bottom: 8px; }
-p { margin-bottom: 15px; line-height: 1.8; }
-a { color: #1e90ff; text-decoration: none; }
-a:hover { text-decoration: underline; }
-footer { text-align: center; padding: 20px; background: #0a3d62; color: #fff; margin-top: 30px; font-size: 0.9rem; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body { 
+    font-family: 'Segoe UI', sans-serif; 
+    background: #0f172a; 
+    color: #e5e7eb; 
+  }
+
+  header {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(145deg, #0a3d62, #020617);
+    border-bottom: 2px solid #22c55e;
+  }
+
+  header h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.8rem;
+    background: linear-gradient(to right, #38bdf8, #22c55e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 5px;
+  }
+
+  nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background: #1e90ff;
+    padding: 12px 0;
+  }
+
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 14px 25px;
+    font-weight: 600;
+    margin: 4px;
+    border-radius: 8px;
+    transition: 0.3s ease;
+  }
+
+  nav a:hover {
+    background: #22c55e;
+    color: #020617;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(34,197,94,0.3);
+  }
+
+  section {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 40px;
+    background: linear-gradient(145deg, #020617, #111827);
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  }
+
+  h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.6rem;
+    color: #22c55e;
+    margin-bottom: 15px;
+  }
+
+  p {
+    margin-bottom: 18px;
+    line-height: 1.8;
+    color: #e5e7eb;
+  }
+
+  ul {
+    margin-left: 20px;
+    margin-bottom: 15px;
+  }
+
+  li {
+    margin-bottom: 12px;
+    color: #e5e7eb;
+  }
+
+  a {
+    text-decoration: none;
+    color: #38bdf8;
+    font-weight: 600;
+    transition: 0.3s ease;
+  }
+
+  a:hover {
+    color: #22c55e;
+    text-decoration: underline;
+  }
+
+  footer {
+    text-align: center;
+    padding: 25px;
+    background: linear-gradient(145deg, #0a3d62, #020617);
+    color: #e5e7eb;
+    margin-top: 30px;
+    font-size: 0.95rem;
+    border-top: 2px solid #22c55e;
+  }
 </style>
 </head>
 <body>
@@ -39,30 +127,30 @@ footer { text-align: center; padding: 20px; background: #0a3d62; color: #fff; ma
 
 <section>
 
-<h2>Analysis Summary</h2>
-<p>During Milestone One, I performed a thorough review of my Contact Service application across three areas: software design, algorithms & data structures, and databases. Key findings:</p>
-<ul>
-<li>Strong class structure and unit tests.</li>
-<li>Repeated validation logic and limited error handling.</li>
-<li>Linear searches in ArrayLists were inefficient.</li>
-<li>No persistent database storage was implemented.</li>
-</ul>
+  <h2>Analysis Summary</h2>
+  <p>During Milestone One, I performed a thorough review of my Contact Service application across three areas: software design, algorithms & data structures, and databases. Key findings:</p>
+  <ul>
+    <li>Strong class structure and unit tests.</li>
+    <li>Repeated validation logic and limited error handling.</li>
+    <li>Linear searches in ArrayLists were inefficient.</li>
+    <li>No persistent database storage was implemented.</li>
+  </ul>
 
-<h2>Planned Enhancements</h2>
-<ul>
-<li>Refactor input validation and access control for maintainability.</li>
-<li>Improve performance with HashMap-based data structures.</li>
-<li>Add a relational database for secure, persistent data storage.</li>
-<li>Strengthen unit tests, including negative and exception-based tests.</li>
-<li>Document enhancements clearly in the ePortfolio.</li>
-</ul>
+  <h2>Planned Enhancements</h2>
+  <ul>
+    <li>Refactor input validation and access control for maintainability.</li>
+    <li>Improve performance with HashMap-based data structures.</li>
+    <li>Add a relational database for secure, persistent data storage.</li>
+    <li>Strengthen unit tests, including negative and exception-based tests.</li>
+    <li>Document enhancements clearly in the ePortfolio.</li>
+  </ul>
 
-<h2>Artifact Links</h2>
-<ul>
-<li><a href="artifact1.html">Software Design Enhancement</a></li>
-<li><a href="artifact2.html">Algorithms & Data Structures Enhancement</a></li>
-<li><a href="artifact3.html">Databases Enhancement</a></li>
-</ul>
+  <h2>Artifact Links</h2>
+  <ul>
+    <li><a href="artifact1.html">Software Design Enhancement</a></li>
+    <li><a href="artifact2.html">Algorithms & Data Structures Enhancement</a></li>
+    <li><a href="artifact3.html">Databases Enhancement</a></li>
+  </ul>
 
 </section>
 
